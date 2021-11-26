@@ -37,7 +37,7 @@ Still in the stablecoin smart contract call method `1.approve` method to approve
          spender : 0xDF80aaF176Bb1b71176215A78Ff3E65E6d7f4deD
          amount  : 400000000000000000000000
      
-<h3>3 - Mint SSTRIO tokens:</h3>
+<h3>3 - Mint sStrio tokens:</h3>
 Go to [sStrio token smart contract interface](https://rinkeby.etherscan.io/address/0xdf80aaf176bb1b71176215a78ff3e65e6d7f4ded#writeContract) 
     and call the method `5.mintStable` to mint sStrio tokens with the follwing parameters:
     
