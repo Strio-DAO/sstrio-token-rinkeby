@@ -46,7 +46,7 @@ Go to [sStrio token smart contract interface](https://rinkeby.etherscan.io/addre
           _amount  : values from 10000 up to 40000 with 18 decimals. ex. 10000 (10000000000000000000000) / 400000(400000000000000000000000)
           
 <h3>4 - Add tokens to your metamask portfolio:</h3>
-sStrio: 0xDF80aaF176Bb1b71176215A78Ff3E65E6d7f4deD
-Weenus: 0xaFF4481D10270F50f203E0763e2597776068CBc5 
-Xeenus: 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
+sStrio: 0xDF80aaF176Bb1b71176215A78Ff3E65E6d7f4deD<br>
+Weenus: 0xaFF4481D10270F50f203E0763e2597776068CBc5<br> 
+Xeenus: 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c<br>
 
