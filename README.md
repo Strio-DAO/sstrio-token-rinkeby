@@ -8,7 +8,7 @@ In this repo you'll find the test version of the SSTRIO token smart contract lan
 <h2> About the sSTRIO token:</h2>
 Max Supply: 100,000,000 STRIO<br>
 Avialbale for minting: 40,000,000 STRIO<br>
-Minting price: 1 STRIO = 0.1 USD<br>
+Minting price: 1 SSTRIO = 0.1 USD<br>
 Min purchase amount = 10,000 STRIO<br>
 Max purchase amount = 1,000,000 STRIO<br>
 You can check the full tokenomics and purpose of the token on <a href="https://polyester-rosehip-31b.notion.site/Governance-c1b6b84c72f34409b691102902d60634">Strio's wiki</a> .<br> 
