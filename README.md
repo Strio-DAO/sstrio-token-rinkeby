@@ -11,7 +11,7 @@ Avialbale for minting: 40,000,000 STRIO<br>
 Minting price: 1 STRIO = 0.1 USD<br>
 Min purchase amount = 10,000 STRIO<br>
 Max purchase amount = 1,000,000 STRIO<br>
-You can check the full tokenomics and purpose of the token on [Strio's wiki](https://polyester-rosehip-31b.notion.site/Governance-c1b6b84c72f34409b691102902d60634).<br> 
+You can check the full tokenomics and purpose of the token on <a href="https://polyester-rosehip-31b.notion.site/Governance-c1b6b84c72f34409b691102902d60634">Strio's wiki</a> .<br> 
 
 <h2>sStrio token smart contract:</h2>
      
@@ -38,7 +38,7 @@ Still in the stablecoin smart contract call method <code>1.approve</code> method
          amount  : 400000000000000000000000
      
 <h3>3 - Mint sStrio tokens:</h3>
-Go to [sStrio token smart contract interface](https://rinkeby.etherscan.io/address/0xdf80aaf176bb1b71176215a78ff3e65e6d7f4ded#writeContract) 
+Go to <a href="https://rinkeby.etherscan.io/address/0xdf80aaf176bb1b71176215a78ff3e65e6d7f4ded#writeContract">sStrio token smart contract interface</a> 
     and call the method <code>5.mintStable</code> to mint sStrio tokens with the follwing parameters:
     
     Params :
