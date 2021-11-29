@@ -1,4 +1,4 @@
-<h1>sStrio token on rinkeby testnetwork</h1>
+<h1>sStrio token on Rinkeby test network</h1>
 smart contract for sstrio erc20 token on rinkeby network
 
 <h2>About this repo:</h2>
@@ -31,7 +31,7 @@ Xeenus Token | https://rinkeby.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff
      
 
 <h3>2 - Approve sStrio's smart contract transactions with stablecoins from your wallet:</h3>
-Still in the stablecoin smart contract call method <code>1.approve</code> method to approve sStrio contract token to spend your weenus/xeenus tokens, using the follwing parameters
+Still in the stablecoin smart contract call method <code>1.approve</code> to approve sStrio contract token to spend your weenus/xeenus tokens, using the follwing parameters
 
      Params : 
          spender : 0xDF80aaF176Bb1b71176215A78Ff3E65E6d7f4deD
@@ -45,7 +45,7 @@ Go to <a href="https://rinkeby.etherscan.io/address/0xdf80aaf176bb1b71176215a78f
           addrMint : 0xaFF4481D10270F50f203E0763e2597776068CBc5 (for weeenus) or 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c (for xeenus)
           _amount  : values from 10000 up to 40000 with 18 decimals. ex. 10000 (10000000000000000000000) / 400000(400000000000000000000000)
           
-<h3>4 - Add tokens to your metamask portfolio:</h3>
+<h3>4 - Add tokens to your Metamask portfolio:</h3>
 In your browser plug-in or mobile app go to <code>import tokens</code> and add the following addresses:<br>
 sStrio: 0xDF80aaF176Bb1b71176215A78Ff3E65E6d7f4deD<br>
 Weenus: 0xaFF4481D10270F50f203E0763e2597776068CBc5<br> 
