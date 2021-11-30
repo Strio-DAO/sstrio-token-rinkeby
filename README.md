@@ -6,11 +6,11 @@ In this repo you'll find the test version of the SSTRIO token smart contract lan
 
      
 <h2> About the sSTRIO token:</h2>
-Max Supply: 100,000,000 SSTRIO<br>
-Avialbale for minting: 40,000,000 SSTRIO<br>
-Minting price: 1 SSTRIO = 0.1 USD<br>
-Min purchase amount = 10,000 SSTRIO<br>
-Max purchase amount = 1,000,000 SSTRIO<br>
+<ul><li>Max Supply: 100,000,000 SSTRIO</li>
+<li>Avialbale for minting: 40,000,000 SSTRIO</li>
+<li>Minting price: 1 SSTRIO = 0.1 USD</li>
+<li>Min purchase amount = 10,000 SSTRIO</li>
+<li>Max purchase amount = 1,000,000 SSTRIO</li></ul>
 You can check the full tokenomics and purpose of the token on <a href="https://polyester-rosehip-31b.notion.site/Governance-c1b6b84c72f34409b691102902d60634">Strio's wiki</a> .<br> 
 
 <h2>sStrio token smart contract:</h2>
@@ -24,14 +24,14 @@ Note: Make sure to connect your wallet to Rinkeby testnetwork. There won't be an
      
 <h3>1 -  Fund your wallet with stablecoins (Weenus or Xeenus tokens):</h3>
 Go to one of the stablecoin smart contracts below and connect your wallet on the <code>connect to web3 button</code> and access the <code>write</code> tab. Call method <code>4.drip</code> parameter and click <code>write</code> to fund your wallet:
-     
-Weenus Token | https://rinkeby.etherscan.io/address/0xaFF4481D10270F50f203E0763e2597776068CBc5 <br>
-Xeenus Token | https://rinkeby.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
+
+<ul><li>Weenus Token | https://rinkeby.etherscan.io/address/0xaFF4481D10270F50f203E0763e2597776068CBc5</li>
+<li>Xeenus Token | https://rinkeby.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c</li></ul>
 
      
 
 <h3>2 - Approve sStrio's smart contract transactions with stablecoins from your wallet:</h3>
-Still in the stablecoin smart contract call method <code>1.approve</code> to approve sStrio contract token to spend your weenus/xeenus tokens, using the follwing parameters
+Still in the stablecoin smart contract call method <code>1.approve</code> to approve sStrio contract token to spend your weenus/xeenus tokens, using the follwing parameters:
 
      Params : 
          spender : 0xDF80aaF176Bb1b71176215A78Ff3E65E6d7f4deD
@@ -47,7 +47,7 @@ Go to <a href="https://rinkeby.etherscan.io/address/0xdf80aaf176bb1b71176215a78f
           
 <h3>4 - Add tokens to your Metamask portfolio:</h3>
 In your browser plug-in or mobile app go to <code>import tokens</code> and add the following addresses:<br>
-sStrio: 0xDF80aaF176Bb1b71176215A78Ff3E65E6d7f4deD<br>
-Weenus: 0xaFF4481D10270F50f203E0763e2597776068CBc5<br> 
-Xeenus: 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c<br>
+<ul><li>sStrio: 0xDF80aaF176Bb1b71176215A78Ff3E65E6d7f4deD</li>
+<li>Weenus: 0xaFF4481D10270F50f203E0763e2597776068CBc5</li>
+<li>Xeenus: 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c</li></ul>
 
