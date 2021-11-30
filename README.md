@@ -23,7 +23,7 @@ Parameters: Mint SSTRIO with stablecoins (Weenus and Xeenus), send received fund
 Note: Make sure to connect your wallet to Rinkeby testnetwork. There won't be any costs associated with any transaction or fee you'll be paying using the contracts below
      
 <h3>1 -  Fund your wallet with stablecoins (Weenus or Xeenus tokens):</h3>
-Go to one of the stablecoin smart contracts below and connect your wallet on the <code>connect to web3 button</code>. Call method <code>4.drip</code> parameter and click <code>write</code> to fund your wallet:
+Go to one of the stablecoin smart contracts below and connect your wallet on the <code>connect to web3 button</code> and access the <code>write</code> tabl. Call method <code>4.drip</code> parameter and click <code>write</code> to fund your wallet:
      
 Weenus Token | https://rinkeby.etherscan.io/address/0xaFF4481D10270F50f203E0763e2597776068CBc5 <br>
 Xeenus Token | https://rinkeby.etherscan.io/address/0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c
@@ -39,7 +39,7 @@ Still in the stablecoin smart contract call method <code>1.approve</code> to app
      
 <h3>3 - Mint sStrio tokens:</h3>
 Go to <a href="https://rinkeby.etherscan.io/address/0xdf80aaf176bb1b71176215a78ff3e65e6d7f4ded#writeContract">sStrio token smart contract interface</a> 
-    and call the method <code>5.mintStable</code> to mint sStrio tokens with the follwing parameters:
+    and on the <code>write</code>tab call the method <code>5.mintStable</code> to mint sStrio tokens with the follwing parameters:
     
     Params :
           addrMint : 0xaFF4481D10270F50f203E0763e2597776068CBc5 (for weeenus) or 0x022E292b44B5a146F2e8ee36Ff44D3dd863C915c (for xeenus)
