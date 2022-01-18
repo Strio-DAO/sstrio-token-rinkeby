@@ -15,7 +15,7 @@ You can check the full tokenomics and purpose of the token on <a href="https://p
 
 <h2>sStrio token smart contract:</h2>
      
-Address: https://rinkeby.etherscan.io/address/0xdf80aaf176bb1b71176215a78ff3e65e6d7f4ded<br>
+Address: https://rinkeby.etherscan.io/address/0xCD6bBa1Cb1A9d742611e4EfA37A9BbD1559Bb337<br>
 Parameters: Mint SSTRIO with stablecoins (Weenus and Xeenus), send received funds to Strio's test network gnosis safe multi-sig wallet with the address 0xE59a8278e93f901201198B5f7176EB2d4C56e07D
      
 <h2>How to interact with the contract:</h2>
