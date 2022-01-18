@@ -448,8 +448,7 @@ contract SStrioToken is SimpleAccessControl, ERC20Capped {
     uint256 private _nominalRateStable = 0.1 ether;
     
     uint public _minAmount = 10000 * 10**decimals() ;
-    uint public _maxAmount = 1000000 * 10**decimals();
-    //uint public _maxAmount = 20000000 * 10**decimals();
+    uint public _maxAmount = 20000000 * 10**decimals();
     
     constructor(string memory _name, 
                 string memory _symbol,
