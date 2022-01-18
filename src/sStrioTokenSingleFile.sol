@@ -108,7 +108,6 @@ contract SimpleAccessControl {
         _owner = ownerAdress; //address(0xE59a8278e93f901201198B5f7176EB2d4C56e07D);  // msg.sender;
     }
 
-
     function transferOwnership(address payable newOwner) public isOwner {
         require(newOwner != address(0), "ERR_ZERO_ADDR");
         require(newOwner != _owner, "ERR_IS_OWNER");
@@ -420,7 +419,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
 
 contract ERC20Capped is ERC20 {
 
-    uint256 public maxSupply =   100000000000000000000000000;
+    uint256 public maxSupply = 100000000 * 10**decimals();
 
     constructor(string memory _name, string memory _symbol) ERC20(_name, _symbol) 
     {}
@@ -439,14 +438,18 @@ interface ExternalToken {
 
 contract SStrioToken is SimpleAccessControl, ERC20Capped {
 
+    event BurnToken(address indexed owner, uint256 amount);
+
     mapping(address => address ) private _allowedToMint;
     
     bool public _onSale;
+    bool private _burnOpen;
     uint256 private _nominalRate = 0.000024 ether;
     uint256 private _nominalRateStable = 0.1 ether;
     
-    uint private _minAmount = 10000 * 10**decimals() ;
-    uint private _maxAmount = 200000 * 10**decimals();
+    uint public _minAmount = 10000 * 10**decimals() ;
+    uint public _maxAmount = 1000000 * 10**decimals();
+    //uint public _maxAmount = 20000000 * 10**decimals();
     
     constructor(string memory _name, 
                 string memory _symbol,
@@ -455,12 +458,18 @@ contract SStrioToken is SimpleAccessControl, ERC20Capped {
         ERC20Capped(_name, _symbol)
         SimpleAccessControl(_ownerAdress)
     {
-        _mintCapped( _ownerAdress , 60000000000000000000000000 ); //60000000000000000000000000
- 
+        _mintCapped( _ownerAdress , 60000000 * 10**decimals() ); 
         _allowedToMint[stableToMint] = stableToMint;
-
         _onSale = true;
-        
+    }
+
+    function burnState() public view returns(bool){
+        return _burnOpen;
+    }
+
+    function setBurnState(bool newState) public isOwner returns(bool){
+        _burnOpen = newState;
+        return _burnOpen;
     }
     
     function setNominalRateEth(uint256 rate) public isOwner
@@ -478,17 +487,17 @@ contract SStrioToken is SimpleAccessControl, ERC20Capped {
           return _onSale;
     }
     
-    function getNominalRate() view  public isOwner returns(uint256)
+    function getNominalRate() view  public  returns(uint256)
     {
         return _nominalRate;
     }
 
-     function getStableRate() view public isOwner returns(uint256)
+     function getStableRate() view public  returns(uint256)
     {
         return _nominalRateStable;
     }
 
-    function getStableToMint(address contract_ ) view public isOwner returns(address){
+    function getStableToMint(address contract_ ) view public  returns(address){
 
         return _allowedToMint[contract_];
     } 
@@ -502,17 +511,27 @@ contract SStrioToken is SimpleAccessControl, ERC20Capped {
         _allowedToMint[contract_]  = address(0);
         return true;
     }
+
+    function fullBurn() public returns(uint256){
+         require(_burnOpen, 'STRIO_TOKEN_ERROR: BURN_IS_CLOSED');
+         uint256 balance = balanceOf(msg.sender);
+         require(balance > 0, 'STRIO_TOKEN_ERROR: NO_OWNED_TOKENS_TO_BURN');
+         _burn(msg.sender,  balance);
+         emit BurnToken(msg.sender, balance);
+         return balance;
+    }
     
     
     function mintStable(address addrMint, uint256 _amount)  public returns(uint256) {
 
-        require(_onSale, 'ERC20Sale: SALE_CLOSED');
-        require(_allowedToMint[addrMint] == addrMint , 'ERC20Sale: NOT_ALLOWED_TO_MINT');
-        require(_amount >= _minAmount, 'ERC20Sale: ERR_MIN_AMOUNT_STABLE');
-        require(_amount <= _maxAmount, 'ERC20Sale: ERR_MAX_AMOUNT_STABLE');
+        require(_onSale, 'STRIO_TOKEN_ERROR: SALE_CLOSED');
+        require(_allowedToMint[addrMint] == addrMint , 'STRIO_TOKEN_ERROR: NOT_ALLOWED_TO_MINT');
+        require(_amount >= _minAmount, 'STRIO_TOKEN_ERROR: ERR_MIN_AMOUNT_STABLE');
+        require(_amount <= _maxAmount, 'STRIO_TOKEN_ERROR: ERR_MAX_AMOUNT_STABLE');
+        require(balanceOf(msg.sender) + _amount <= _maxAmount , 'STRIO_TOKEN_ERROR: ERR_MAX_AMOUNT_STABLE_WAS_MINTED');
 
         uint256 value = _amount * _nominalRateStable / 10**decimals();
-        require(value <= IERC20(addrMint).balanceOf{gas:100000}(msg.sender), 'ERC20Sale: ERR_NOT_ENOUGH_FUNDS_STABLE');
+        require(value <= IERC20(addrMint).balanceOf{gas:100000}(msg.sender), 'STRIO_TOKEN_ERROR: ERR_NOT_ENOUGH_FUNDS_STABLE');
         //transfer tokens from sender | address(this)
         IERC20(addrMint).transferFrom{gas:100000}(msg.sender, _owner , value);
         //mint ERC20
@@ -522,7 +541,6 @@ contract SStrioToken is SimpleAccessControl, ERC20Capped {
     }
 
 
-   
     function withdrawBalance() public isOwner {
         uint256 _balance = address(this).balance;
         payable(_owner).transfer(_balance);
